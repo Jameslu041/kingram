@@ -30,7 +30,7 @@ def init_database():
     db.drop_all()
     db.create_all()
     for i in range(100):
-        db.session.add(User('User' + str(i), 'a' + str(i), 'http://jira.internal.hyperchain.cn/secure/useravatar?avatarId=10352' + str(random.randint(10344, 10352))))
+        db.session.add(User('User' + str(i), 'a' + str(i), 'http://jira.internal.hyperchain.cn/secure/useravatar?avatarId=' + str(random.randint(10344, 10352))))
         db.session.add(Image('http://08.imgmini.eastday.com/mobile/20171211/20171211181930_917f4f40b9fbaf2e06769b8fc77eefb2_1.jpeg', i + 1))
         for j in range(5):
             db.session.add(Image('http://jira.internal.hyperchain.cn/secure/useravatar?avatarId=10352' + str(random.randint(10344, 10352)), i + 1))
